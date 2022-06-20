@@ -1,0 +1,17 @@
+{
+    "label_features": "Features",
+    "label_features_german": "Eigenschaften",
+    "label_package": "Package",
+    "label_package_german": "Paket",
+    "label_additional_websites": "Additional websites",
+    "label_additional_websites_german": "Zusätzliche Webseiten",
+    "label_package_business": "Business (1 website included)",
+    "label_package_business_german": "Business (1 Webseite inklusive)",
+    "label_package_agency": "Agency (1 website included)",
+    "label_package_agency_german": "Agency (1 Webseite inklusive)",
+    "button_activate_license": "Activate license",
+    "button_activate_license_german": "Lizenz aktivieren",
+    "button_license_activated": "License activated",
+    "button_license_activated_german": "Lizenz aktiviert",
+    "button_dashboard": "Sitejet Dashboard"
+}
