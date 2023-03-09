@@ -31,7 +31,7 @@ class KAApiClient {
         $this->password = $password;
     }
 
-    public function isAgency($keyId) 
+    public function isAgency($keyId)
     {
         $license = $this->retrieve($keyId);
         return ($license['items'][0]['item'] == self::SJ_AGENCY_SKU) || ($license['items'][0]['item'] == self::SJ_AGENCY_SITES_SKU) ;
@@ -51,7 +51,7 @@ class KAApiClient {
             ),
         ));
 
-        $ch =  CURLHelper::preparePOST(self::API_URL_BASE.'?return-key-state=yes', $this->username, $this->password, self::JSON_CONTENT_TYPE, $postData);
+        $ch =  CURLHelper::preparePOST(self::API_URL_BASE.'?return-key-state=yes&retailer=whmcs-ka', $this->username, $this->password, self::JSON_CONTENT_TYPE, $postData);
         $response = curl_exec($ch);
         if (curl_errno($ch)) {
             throw new \Exception('Connection Error: ' . curl_errno($ch) . ' - ' . curl_error($ch));
@@ -59,7 +59,7 @@ class KAApiClient {
         curl_close($ch);
 
         $this->results = $this->processResponse($response);
-       
+
         if (defined("WHMCS")) {
             logModuleCall(
                 'sitejet',
@@ -89,7 +89,7 @@ class KAApiClient {
         curl_close($ch);
 
         $this->results = $this->processResponse($response);
-        
+
         if (defined("WHMCS")) {
             logModuleCall(
                 'sitejet',
@@ -131,7 +131,7 @@ class KAApiClient {
         curl_close($ch);
 
         $this->results = $this->processResponse($response);
-        
+
         if (defined("WHMCS")) {
             logModuleCall(
                 'sitejet',
@@ -163,7 +163,7 @@ class KAApiClient {
         curl_close($ch);
 
         $this->results = $this->processResponse($response);
-        
+
         if (defined("WHMCS")) {
             logModuleCall(
                 'sitejet',
